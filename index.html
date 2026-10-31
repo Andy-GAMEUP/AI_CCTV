@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="DX-1100 AI CCTV 설치·온라인 콘솔 사용가이드와 공급사 미결 체크리스트">
+<title>AI CCTV · 설치와 사용 가이드</title>
+<style>
+:root{--ink:#16313a;--muted:#5c7279;--teal:#087e80;--line:#d9e6e3}*{box-sizing:border-box}body{margin:0;background:#f2f6f5;color:var(--ink);font:16px/1.8 -apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Malgun Gothic",sans-serif}main{max-width:1080px;margin:auto;padding:54px 28px 45px}.label{font-size:12px;font-weight:750;letter-spacing:2px;color:var(--teal)}h1{font-size:clamp(34px,5vw,55px);line-height:1.25;letter-spacing:-1.8px;margin:24px 0}header p{max-width:740px;color:var(--muted)}.meta{display:flex;flex-wrap:wrap;gap:8px;margin:25px 0 35px}.meta span{font-size:12px;border:1px solid #c7ddd7;border-radius:25px;padding:4px 12px;background:#e7f1ed}.grid{display:grid;grid-template-columns:1fr 1fr;gap:18px}.card{display:block;text-decoration:none;color:inherit;border:1px solid var(--line);border-radius:13px;background:#fff;padding:28px;transition:transform .15s,box-shadow .15s}.card:hover{transform:translateY(-3px);box-shadow:0 8px 25px #17333c0c}.card.primary{background:#183b42;color:#fff;border-color:#183b42}.num{font-size:12px;letter-spacing:2px;color:var(--teal);font-weight:700}.primary .num{color:#7ee0cc}h2{font-size:23px;line-height:1.5;margin:14px 0 10px}.card p{font-size:14px;color:var(--muted);margin:0 0 22px}.primary p{color:#bdd6d8}.go{font-size:14px;font-weight:700;color:var(--teal)}.primary .go{color:#7ee0cc}.note{margin-top:26px;padding:20px 24px;border-left:3px solid var(--teal);background:#e8f1ee;font-size:14px}.note p{margin:4px 0;color:#46636a}.links{margin:25px 0 0;font-size:13px;color:var(--muted);display:flex;flex-wrap:wrap;gap:12px 22px}.links a{color:var(--teal);text-underline-offset:4px}footer{margin-top:34px;border-top:1px solid var(--line);padding-top:18px;color:var(--muted);font-size:12px}a:focus-visible{outline:3px solid #c98c25;outline-offset:5px}@media(max-width:680px){main{padding:30px 18px}.grid{grid-template-columns:1fr}.card{padding:23px}h1{font-size:37px}}
+</style>
+</head>
+<body><main>
+<header><div class="label">AI CCTV / FIELD & CONSOLE GUIDE</div><h1>설치부터 데이터 확인까지,<br>한 단계씩 따라가세요.</h1><p>DX-1100과 돔형 IP CCTV 3대를 연결하는 현장 설치, YUNDVISION WEB 콘솔 사용, 공급사 미결 요청을 정리했습니다. 준비물부터 시작하거나 필요한 가이드를 선택하세요.</p><div class="meta"><span>DX-1100 기준</span><span>공식 WEB·API 문서 반영</span><span>v1.2 · 2026-10-31</span></div></header>
+<div class="grid">
+<a class="card primary" href="AI_CCTV_설치_매뉴얼.html"><span class="num">01 / INSTALLATION & OPERATION</span><h2>설치·사용 통합 매뉴얼</h2><p>준비물, 카메라 고정, HDD, 공유기·PoE·노트북 배선, IP와 셋탑 설정부터 콘솔 사용까지.</p><span class="go">준비물부터 시작하기 →</span></a>
+<a class="card" href="WEB콘솔_사용가이드.html"><span class="num">02 / WEB CONSOLE</span><h2>WEB 콘솔 사용가이드</h2><p>매장·장치·분구 등록, 영상·녹화 재생, 방문객·체류·동선·히트맵 조회와 데이터 출력.</p><span class="go">콘솔 사용법 보기 →</span></a>
+<a class="card" href="DX-1100_공급사_설치_콘솔_체크리스트.html"><span class="num">03 / SUPPLIER CHECKLIST</span><h2>공급사 미결 체크리스트</h2><p>일반 설치·운영 31개와 선택 API 연동 5개. 회신 상태·근거·담당자·기한을 기록하고 CSV로 출력합니다.</p><span class="go">요청·회신 항목 열기 →</span></a>
+<a class="card" href="AI_CCTV_설치_매뉴얼.html#api-guide"><span class="num">04 / OPTIONAL API INTEGRATION</span><h2>API 연동 준비가이드</h2><p>자체 시스템 연동 담당자를 위한 개통·인증·버전·조회 경로·시간 단위와 WEB 데이터 대조 안내.</p><span class="go">선택 연동 준비하기 →</span></a>
+</div>
+<div class="note"><strong>사용 전 확인하세요</strong><p>공식 문서로 해소된 설명은 공급사 요청에서 제외하고, 실제 장치·권한·데이터 검수가 필요한 항목만 남겼습니다. 문서 확인과 실제 영상·분석·API 작동 검증은 구분합니다.</p><p>체크리스트 입력은 현재 브라우저에만 저장됩니다. 작성한 내용은 회신 CSV 또는 인쇄/PDF로 전달하세요. 비밀번호·장치 key는 입력하지 않습니다.</p></div>
+<nav class="links" aria-label="관련 자료"><a href="AI_CCTV_설치_매뉴얼.html#doc-reconciliation">공식 문서 반영·요청 삭제 내역</a><a href="https://github.com/Andy-GAMEUP/AI_CCTV">GitHub 자료·다운로드</a><a href="https://yunding360.yuque.com/vsgys3/xky7zh/">공급사 WEB 원문</a><a href="https://openapi-docs.yunding360.com/">공급사 API 원문</a></nav>
+<footer>AI CCTV GUIDE · DX-1100 프로젝트용 안내<br>원본 PDF와 공급사 문서의 제조사 표기·화면은 원 소유자의 자료입니다. 실제 납품 형번·펌웨어·기능 지원 조건은 공급사 확인이 필요합니다.</footer>
+</main></body></html>
