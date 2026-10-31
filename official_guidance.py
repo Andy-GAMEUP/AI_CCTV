@@ -71,6 +71,22 @@ NEW_CHECKS=[
 ('F05','API 선택 연동','P0','영상·통합 검수','videos/{sn}/{channelNo}의 실제 DX 채널 번호, RTMP 재생의 현대 브라우저 지원 방식·URL 만료/권한/저장 유형을 확정해 주세요. 읽기 전용 샘플로 페이지 누락·데이터 갱신·오류·영상 접근·WEB 대조를 검수해 주세요.','지원 플레이어/전송 방식·URL 수명·마스킹된 검수 결과'),
 ]
 
+# Stable IDs preserve existing browser replies and CSV references.
+CUSTOM_CONSOLE_CHECKS=[
+('G01','자체 한글 콘솔 개발','P0','개발·브랜드·고객 제공 허용','공개 API를 이용한 별도 한글 WEB 콘솔 개발, 자사 도메인·브랜드 적용, 국내 고객/가맹점 제공 및 유료 서비스의 허용 여부와 계약 조건을 서면으로 확정해 주세요. API 개통(F01)과 구분하여 UI·상표·화면/문서 재사용 범위, SDK 라이선스·로열티·재판매 제한 및 서비스 종료 시 처리 조건을 회신해 주세요.','자체 콘솔·고객 제공 허용 확인서·라이선스/과금 조건표'),
+('G02','자체 한글 콘솔 개발','P0','기존 콘솔↔API 기능 대응표','방문객·체류·관심도·히트맵·동선·영상·보고서·매장/장치 관리·알림·권한 설정별로 공개 API/별도 API/SDK/기존 콘솔 전용/미지원 여부를 구분해 주세요. 이번 DX-1100·카메라·펌웨어·계약에서 쓸 수 있는 경로·버전·읽기/쓰기 권한·추가 모듈/비용을 표시하고 최신 OpenAPI 명세 또는 동등한 요청/응답 스키마를 제공해 주세요.','기능별 API 대응·납품 지원표·버전 명세·추가 비용표'),
+('G03','자체 한글 콘솔 개발','P0','고객·매장별 권한 격리','API 전용 계정의 기업/고객/매장별 접근 범위, 최소 권한·읽기/쓰기 분리, 계정별 발급 및 회수 방법을 확정해 주세요. 자체 로그인 사용자를 매핑하는 공식 방법과 SSO 지원 여부를 안내하고, 다른 매장/기업 ID를 요청했을 때 API에서 차단되는 범위 및 자체 서버가 별도로 제한해야 할 범위를 구분해 주세요.','계정·기업·매장 권한표·마스킹된 교차 접근 차단 시험·발급/회수 절차'),
+('G04','자체 한글 콘솔 개발','P0','매장·장치·분석 설정 쓰기 연동','매장 생성/수정(addStore/updateStore)은 공개 명세가 있습니다. 실제 필수값·쓰기 권한·기존 콘솔 동기화/충돌 규칙을 확인하고, 장치 등록/해제·SN/key 바인딩·구역 연결·분석선·직원 제외·녹화·PTZ·펌웨어 제어의 추가 API/SDK 제공 여부를 각각 회신해 주세요. 미제공 기능은 기존 콘솔 또는 현장 도구에서 수행할 절차와 책임을 지정해 주세요.','쓰기 기능 지원표·샌드박스 성공 예시·충돌/중복 요청·실패 복구 절차'),
+('G05','자체 한글 콘솔 개발','P0','도면·좌표·히트맵 편집 연동','히트맵 조회 API 외에 도면 업로드/교체·층/구역 생성·경계 편집·장치 매핑/보정 API가 있는지 확인해 주세요. 도면/구역/카메라 ID 대응, 좌표 원점·축 방향·단위·크기 변경 시 변환, 열값/범례·정규화 기준과 도면 URL의 인증·만료·외부 도메인 표시 조건을 제공해 주세요. 미지원 편집의 기존 콘솔 작업 절차도 구분해 주세요.','실제 도면+좌표/열값 샘플·좌표 규약·편집 API/대체 절차·URL 정책'),
+('G06','자체 한글 콘솔 개발','P0','동선·구역 간 이동 데이터','검토한 공개 명세에서는 기존 Moving line analysis와 동일한 이동 순서·궤적·구역 간 전이 API를 확인하지 못했습니다. Sankey/동선 재현용 API·SDK의 제공 여부, 노드/링크/전이 인원·방향·시간순서 스키마와 조회 범위를 제공해 주세요. 10초 체류 표본·반복 이동·카메라 간 중복 제거 규칙을 명시하고, 미제공 시 자체 콘솔의 해당 기능은 제외해야 하는지 확정해 주세요.','동선 API/SDK 명세·익명화된 구역 이동 샘플·기존 화면 대조·미지원 대안'),
+('G07','자체 한글 콘솔 개발','P0','자체 도메인 영상 플레이어·SDK','F05의 채널·URL 검수에 더해 자체 도메인에서 사용할 공식 웹 플레이어/SDK와 라이선스·배포 파일·예제를 제공해 주세요. RTMP 외 HLS/WebRTC/HTTP-FLV 등 지원 방식, HTTPS/WSS·코덱·지원 브라우저·도메인/CORS 제한, 중계/변환 서버 필요성과 운영 주체를 확정해 주세요. 다중 채널·동시 사용자 제한/비용, 재생·녹화 다운로드·PTZ 지원과 자체 콘솔 영상 접근의 감사 기록 방법도 회신해 주세요.','SDK/플레이어 예제·지원 환경표·전송 구성도·동시접속/중계 비용·감사 방식'),
+('G08','자체 한글 콘솔 개발','P0','한국어·한국 시간대·주소 연동','한국어 매장/장치/구역명과 오류·상태 코드의 지원 목록, 한국 주소·좌표 등록 및 지도 연동의 제약을 제공해 주세요. F03의 시간 대응에 더해 원천 집계를 Asia/Seoul 기준으로 설정할 수 있는지, 설정 주체·변경 후 과거 데이터 영향·자정 넘김/휴일 처리 및 화면 표시만 한국 시간으로 바꾸는 경우의 한계를 확정해 주세요.','한글 필드/코드표·한국 매장 등록 예시·한국 날짜 경계 전후 WEB/API 대조'),
+('G09','자체 한글 콘솔 개발','P0','갱신·누락·과거 데이터 동기화','실시간성 수준·권장 폴링 주기와 webhook/이벤트 제공 여부를 확인해 주세요. 지연 집계·과거 수치 보정·장치 단절 후 재전송을 탐지하는 갱신시각/커서/이벤트 ID, 중복 제거·재조회/백필·삭제 반영 방식을 제공해 주세요. F04의 한도 내에서 다매장 동기화를 설계할 수 있도록 과거 조회/보관 범위와 증분 수집 성공 예시를 회신해 주세요.','수집 주기·갱신/이벤트 스키마·백필/중복/누락 복구 예제·보관 범위'),
+('G10','자체 한글 콘솔 개발','P0','자체 저장·보고서·배포 조건','API 분석 데이터·도면·영상의 자체 서버 캐시/DB 저장, 가공·CSV/Excel/PDF 출력 및 고객 제공 허용 범위·보관/삭제 조건을 확정해 주세요. 공급사 및 자체 서버 사이의 저장·전송 위치와 원격 접근 주체를 구분하고, 국내 서버 배포 시 IP 허용목록·방화벽·필수 통신 대상·지역 제한을 안내해 주세요. 계약 종료/고객 탈퇴 시 데이터 추출·삭제·접근 회수 책임도 회신해 주세요.','데이터 이용·보관/종료 조건·통신 요구사항·저장/전송 구성도·책임표'),
+('G11','자체 한글 콘솔 개발','P0','개발 환경·공동 검수·역할 분담','F01/F05의 테스트 권한·기본 조회 검수에 더해 데이터가 있는 DX-1100 테스트 매장, 읽기/쓰기 분리 샌드박스와 비밀값을 제거한 호출 예제/Postman 자료를 제공해 주세요. API/SDK·라이선스·샘플·장치 설정은 공급사, 한글 UI·자체 로그인/권한·서버 운영은 개발사 등 실제 담당 범위를 합의하고, 타 매장 접근 차단·통계 대조·영상·단절/만료/호출한도·설정 변경 검수의 합격 기준·담당자·완료일을 제시해 주세요.','개발환경 인계 목록·역할/일정표·공동 검수 시나리오·합격 기준·결과 양식'),
+('G12','자체 한글 콘솔 개발','P0','API·SDK 유지보수·변경 통지','API/SDK 버전 지원 기간·호환성 보장 범위, 명세/지표/인증/요금 변경의 사전 통지 기간과 폐기·이행 절차를 확정해 주세요. 장애 시 공급사 API/장치와 자체 콘솔의 원인 분리 방법, 지원 창구·응답/복구 목표·에스컬레이션 및 별도 지원 비용을 회신해 주세요.','버전/폐기 정책·변경 통지 약정·지원/SLA·장애 분담표'),
+]
+
 def source_url(code):
     for c,title,slug,note in SOURCES:
         if c==code:return WEB+slug
@@ -89,7 +105,7 @@ def evidence_md(id):
 def revise_checks(checks):
     titles={'B02':'한국 주소 지원','B06':'key·바인딩','C03':'입점률 경계·체류 표본','D05':'유지보수·로그 보관'}
     proofs={'B02':'한국 주소 시연·지원 제약/대체 입력','B06':'key 조건·해제/재등록 절차','C03':'분모 0·체류 표본 검증 예시'}
-    return [(c[0],c[1],c[2],titles.get(c[0],c[3]),REVISED.get(c[0],c[4]),proofs.get(c[0],c[5])) for c in checks if c[0] not in REMOVED]+NEW_CHECKS
+    return [(c[0],c[1],c[2],titles.get(c[0],c[3]),REVISED.get(c[0],c[4]),proofs.get(c[0],c[5])) for c in checks if c[0] not in REMOVED]+NEW_CHECKS+CUSTOM_CONSOLE_CHECKS
 
 def table(head,rows):
     return '<div class="table-wrap"><table><thead><tr>'+''.join('<th>'+escape(x)+'</th>' for x in head)+'</tr></thead><tbody>'+''.join('<tr>'+''.join('<td>'+x+'</td>' for x in r)+'</tr>' for r in rows)+'</tbody></table></div>'
@@ -139,7 +155,7 @@ def api_section():
 def reconciliation_section():
     rows=[(id,reason,escape(detail)) for id,(reason,detail) in REMOVED.items()]
     body=table(['기존 ID','이번 처리','공식 문서 반영 / 남긴 미결'],rows)
-    body+='''<div class="notice"><strong>활성 요청은 일반 설치·운영 31개 + 선택 API 연동 5개 = 36개</strong>설명된 조작법은 사용가이드로 옮겼습니다. 일부 항목은 전부 해소된 것이 아니라 남은 질문을 다른 항목으로 통합했습니다. 회신·검수 체크는 자동으로 완료 처리하지 않습니다. API를 사용하지 않으면 F01~F05는 사유를 적고 해당 없음으로 처리합니다.</div>'''
+    body+='''<div class="notice"><strong>활성 요청은 일반 설치·운영 31개 + 선택 API 연동 5개 + 자체 한글 콘솔 개발 12개 = 총 48개</strong>설명된 조작법은 사용가이드로 옮겼습니다. 일부 항목은 전부 해소된 것이 아니라 남은 질문을 다른 항목으로 통합했습니다. 회신·검수 체크는 자동으로 완료 처리하지 않습니다. F01~F05는 API 선택 연동 시, G01~G12는 자체 한글 콘솔 개발 시 적용하며 미적용 항목은 사유와 함께 해당 없음으로 처리합니다.</div>'''
     body+=table(['ID','읽은 공식 WEB 본문','확인 내용'],[(c,link(c,title),escape(note)) for c,title,slug,note in SOURCES])
     body+=table(['ID','API 문서','검토 범위'],[(c,link(c,title),escape(note)) for c,title,url,note in APISOURCES])
     body+='<p class="small">확인일 2026-10-31. 공식 문서 페이지의 수정일은 항목마다 다르며, 실제 납품 펌웨어/현재 영문 UI와 일치한다는 보장은 아닙니다. 문서로 해소되지 않은 key·형번·분석 호환·한국 지역 지원·집계 임계값·테스트 결과는 계속 요청합니다.</p>'
@@ -148,7 +164,7 @@ def reconciliation_section():
 def extend_official(html,css):
     html=html.replace('<footer class="footer">',web_section()+api_section()+reconciliation_section()+'<footer class="footer">',1)
     html=html.replace('</nav>','<a href="#official-web"><span class="navnum">14</span>공식 WEB 사용법</a><a href="#api-guide"><span class="navnum">15</span>API 연동 준비</a><a href="#doc-reconciliation"><span class="navnum">16</span>요청사항 재정리</a></nav>',1)
-    html=html.replace('INSTALLATION & CONSOLE · V1.1','INSTALLATION & CONSOLE · V1.2')
+    html=html.replace('INSTALLATION & CONSOLE · V1.1','INSTALLATION & CONSOLE · V1.3')
     html=html.replace('현재 실제 재생·다운로드·PTZ 지원·플러그인 필요 여부는 미검증입니다.','실제 재생·다운로드·모델별 PTZ/플러그인 지원은 미검증입니다.')
     html=html.replace('기존 계정 바인딩을 피하도록', '기존 계정 바인딩을 피하도록')
     html=html.replace('초기 설치 가이드 보강 요청 자료 ↗','최신 미결 요청 요약 ↗')
@@ -160,13 +176,13 @@ def extend_official(html,css):
     for id in ['console','console-setup','console-use','official-web']:
         match=re.search(r'<section class="section" id="'+id+r'">.*?</section>',html,re.S)
         if match:parts.append(match.group())
-    standalone='<!doctype html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>YUNDVISION WEB 콘솔 사용가이드</title><style>'+css+'main{margin:0 auto!important;max-width:1120px;padding:30px 24px}@media print{main{padding:0}}</style></head><body><main><div class="topline"><span class="eyebrow">WEB CONSOLE GUIDE · V1.2</span><button onclick="window.print()">인쇄 / PDF 저장</button></div><h1>YUNDVISION WEB 콘솔 사용가이드</h1><p>공식 문서의 조작법과 실제 UI 점검을 구분합니다. 실제 장치·데이터 검수는 별도입니다. 아래 단계 번호는 통합 매뉴얼 기준이며, API 준비는 별도 링크에서 확인합니다.</p><p><a href="AI_CCTV_설치_매뉴얼.html">설치·사용 통합 매뉴얼</a> · <a href="DX-1100_공급사_설치_콘솔_체크리스트.html">공급사 미결 체크리스트</a> · <a href="API_연동_준비_가이드.md">API 연동 준비 원문</a></p>'+''.join(parts)+'</main></body></html>'
+    standalone='<!doctype html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>YUNDVISION WEB 콘솔 사용가이드</title><style>'+css+'main{margin:0 auto!important;max-width:1120px;padding:30px 24px}@media print{main{padding:0}}</style></head><body><main><div class="topline"><span class="eyebrow">WEB CONSOLE GUIDE · V1.3</span><button onclick="window.print()">인쇄 / PDF 저장</button></div><h1>YUNDVISION WEB 콘솔 사용가이드</h1><p>공식 문서의 조작법과 실제 UI 점검을 구분합니다. 실제 장치·데이터 검수는 별도입니다. 아래 단계 번호는 통합 매뉴얼 기준이며, API 준비는 별도 링크에서 확인합니다.</p><p><a href="AI_CCTV_설치_매뉴얼.html">설치·사용 통합 매뉴얼</a> · <a href="DX-1100_공급사_설치_콘솔_체크리스트.html">공급사 미결 체크리스트</a> · <a href="API_연동_준비_가이드.md">API 연동 준비 원문</a></p>'+''.join(parts)+'</main></body></html>'
     (ROOT/'WEB콘솔_사용가이드.html').write_text(standalone)
     return html
 
 def write_notes(checks):
     # A concise current request replaces the old, now stale supplier request draft.
-    md='# DX-1100 공급사 미결 요청사항 요약 · v1.2\n\n공식 WEB 사용가이드와 API 문서를 반영하여 설명이 확인된 내용은 재요청에서 제외했습니다.\n\n일반 설치·운영 31개, 선택 API 연동 5개로 총 36개입니다. API 미사용 시 F01~F05는 해당 없음으로 회신해 주세요.\n\n상세 회신은 [미결 체크리스트 HTML](DX-1100_공급사_설치_콘솔_체크리스트.html) 또는 [Markdown](DX-1100_공급사_설치_콘솔_체크리스트.md)에 기록합니다.\n\n'
+    md='# DX-1100 공급사 미결 요청사항 요약 · v1.3\n\n공식 WEB 사용가이드와 API 문서를 반영하여 설명이 확인된 내용은 재요청에서 제외했습니다.\n\n일반 설치·운영 31개, 선택 API 연동 5개, 자체 한글 콘솔 개발 12개로 총 48개입니다. F01~F05는 API 선택 연동 시, G01~G12는 자체 한글 콘솔 개발 시 적용하며 미적용 항목은 사유와 함께 해당 없음으로 회신해 주세요.\n\n상세 회신은 [미결 체크리스트 HTML](DX-1100_공급사_설치_콘솔_체크리스트.html) 또는 [Markdown](DX-1100_공급사_설치_콘솔_체크리스트.md)에 기록합니다.\n\n'
     for id,g,p,title,q,proof in checks:md+=f'- **{id} / {p} / {g} · {title}**: {q}\n\n'
     md+='## 삭제·통합 내역\n\n'
     for id,(reason,detail) in REMOVED.items():md+=f'- **{id} — {reason}**: {detail}\n\n'
@@ -178,9 +194,10 @@ def write_notes(checks):
     for c,title,url,note in APISOURCES:notes+=f'- [{c} {title}]({url}): {note}\n\n'
     notes+='## 활성 요청에서 삭제·통합한 기존 항목\n\n'
     for id,(reason,detail) in REMOVED.items():notes+=f'- **{id}: {reason}** — {detail}\n\n'
-    notes+='## 검수 한계\n\n기존 콘솔 점검의 장치 0대·매장 없음 상태는 실물 분석 검수가 필요하다는 뜻이며, 이번 문서 검토로 해소되지 않았습니다. API 개통/인증/호출, 장치 등록, 운영 설정 변경은 실행하지 않았습니다. 공급사 요청 목록의 F01~F05는 API를 선택 연동할 때만 적용합니다.\n'
+    notes+='## v1.3 자체 한글 콘솔 요청 추가\n\n기존 A~F의 항목 ID와 회신 저장 키는 유지하고 G01~G12를 추가했습니다. 개발·브랜드/고객 제공 허용, 기능별 API 대응, 권한 격리, 설정 쓰기, 도면/좌표, 동선, 영상 SDK, 한국어/시간대, 데이터 동기화, 자체 저장/배포, 공동 검수, 유지보수 조건을 회신받습니다. 일반 31개 + API 5개 + 자체 콘솔 12개 = 총 48개입니다.\n\n'
+    notes+='## 검수 한계\n\n기존 콘솔 점검의 장치 0대·매장 없음 상태는 실물 분석 검수가 필요하다는 뜻이며, 이번 문서 검토로 해소되지 않았습니다. API 개통/인증/호출, 장치 등록, 운영 설정 변경은 실행하지 않았습니다. 공급사 요청 목록의 F01~F05는 API 선택 연동 시, G01~G12는 자체 한글 콘솔 개발 시 적용합니다.\n'
     (ROOT/'공식문서_반영내역.md').write_text(notes)
     api_md='''# YUNDVISION API 연동 준비 가이드\n\nAPI는 자체 시스템 연동을 선택할 때 담당 개발자가 진행합니다. 콘솔만 쓰는 매장 설치의 필수 요건이 아닙니다. 실제 호출은 수행하지 않았습니다.\n\n1. 공급사에 기업 API 개통·허용 모듈·요금·쿼터를 확인하고 전용 account / enterpriseCode / password를 별도 안전한 경로로 받습니다.\n2. HTTPS·UTF-8 JSON을 사용합니다. 기준 주소는 https://yd.yunding360.com/openapi/ 입니다.\n3. POST /oauth/token에 전용 자격정보를 JSON 본문으로 전달하는 명세입니다. 응답 accessToken·tokenType·refreshToken·수명 필드를 확인하고 서버에서 캐시합니다. HTML·브라우저 저장소·Git에 비밀값을 기록하지 않습니다.\n4. api-version은 공통 v1이지만 POST /accStore/getAvgTimeAndFlowNum은 v2입니다. JSON 본문 요청에는 Content-Type: application/json을 사용합니다.\n5. 문서의 Authorization은 tokenType+accessToken 결합, 예시는 공백 없는 형태입니다. 통상적인 Bearer 형식을 임의 적용하기 전에 성공 헤더를 공급사에서 받아 공백·접두어를 확정합니다.\n6. GET /stores, GET /devices/page, GET /accStore/store/allList로 대상 매장·장치와 권한을 확인합니다. 기본 페이지는 0부터이며 모든 content/metadata 페이지를 처리합니다.\n7. 방문객 v2는 yyyy-MM-dd·DAY/HOUR, 관심도와 히트맵은 밀리초 입력입니다. 방문객 총/평균시간과 attentionAvgDuration은 문서상 초입니다. 한국 시간대·끝 경계·비교 기간·처리 지연은 별도 합의합니다.\n8. storeIds가 단일 UUID인지 배열인지 표기 차이, GET /area/heat/data/attention의 body 표기는 실제 성공 스키마를 요청합니다. 최대 기간·크기·호출한도도 확인합니다.\n9. GET /videos/{sn}/{channelNo}는 IPC의 채널 0을 명시합니다. DX 채널 번호, RTMP/플레이어 호환·URL 만료·권한·저장 유형은 실제 장비로 검수합니다. 재생/녹화 URL은 비밀값이 포함될 수 있어 공유 로그에 남기지 않습니다.\n10. 일반 API 401/403은 토큰/권한 확인 후 제한적으로 재인증·재요청하고, 인증 자체의 401/403은 반복하지 않습니다. 최종적으로 동일 조건의 WEB·내보내기 파일·API 결과를 대조합니다.\n\n## 문서 필드와 WEB 지표 대조\n\n| 필드 | 공식 의미 | 검수 주의 |\n|---|---|---|\n| totalPassTimes / indoorTimes / outdoorTimes | 통행 / 입장 / 퇴장 연인원 | 집계선·기간·중복 조건 대조 |\n| totalCustomerPersonNum / customerPersonNum | 전체 고객 수 / 고객 수 | WEB unique와 자동으로 같다고 판단하지 않음 |\n| totalWanderTime / avgWanderTime | 총 체류·이동시간 / 평균 체류시간, 초 | 문자열/숫자 및 표본 범위 대조 |\n| attentionCustomerNum / attentionCustomerTimes | 관심 고객 수 / 관심 연인원 | 분구·중복 범위 대조 |\n| attentionAvgDuration | 평균 관심시간, 초 | 밀리초 입력과 혼동 금지 |\n\n## 근거와 미결 요청\n\n'''
     for c,title,url,note in APISOURCES:api_md+=f'- [{title}]({url})\n'
-    api_md+='\n[F01~F05 공급사 미결 체크리스트](DX-1100_공급사_설치_콘솔_체크리스트.md)를 사용합니다. 공식 문서 명세 확인과 실제 API 요청 성공은 별개입니다.\n'
+    api_md+='\n[F01~F05 API 연동·G01~G12 자체 콘솔 공급사 미결 체크리스트](DX-1100_공급사_설치_콘솔_체크리스트.md)를 사용합니다. 공식 문서 명세 확인과 실제 API 요청 성공은 별개입니다.\n'
     (ROOT/'API_연동_준비_가이드.md').write_text(api_md)
