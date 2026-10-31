@@ -1,0 +1,11 @@
+__pycache__/
+*.py[cod]
+.DS_Store
+.venv/
+tmp/
+.env
+.env.*
+# Unrelated program application documents
+2026년 스마트상점*.pdf
+# Internal video screenshot contains an organization name; not part of the manual.
+console_assets/05-video.png
